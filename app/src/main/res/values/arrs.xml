@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="arrTYpe">
+        <item>סוג ספורט</item>
+        <item>כדורגל</item>
+        <item>כדורסל</item>
+        <item>טניס</item>
+        <item>שחייה</item>
+        <item>גולף</item>
+        <item>ריצה</item>
+        <item>רוגבי</item>
+        <item>הוקי</item>
+        <item>אופניים</item>
+        <item>אגרוף</item>
+        <item>היאבקות</item>
+        <item>החלקה על קרח</item>
+        <item>כדורעף</item>
+        <item>סוסים</item>
+        <item>סקי</item>
+        <item>גלישת גלים</item>
+        <item>קריקט</item>
+        <item>פוטבול</item>
+        <item>בייסבול</item>
+        <item>טניס שולחן</item>
+        <item>קראטה</item>
+        <item>שייט</item>
+        <item>קליעה</item>
+        <item>ריקוד</item>
+        <item>טריאתלון</item>
+        <item>לקרוס</item>
+        <item>פארקור</item>
+
+
+    </string-array>
+
+    <string-array name="arrCity">
+        <item>עיר</item>
+        <item>ירושלים</item>
+        <item>תל אביב-יפו</item>
+        <item>חיפה</item>
+        <item>באר שבע</item>
+        <item>נתניה</item>
+        <item>פתח תקווה</item>
+        <item>אשדוד</item>
+        <item>עכו</item>
+        <item>עפולה</item>
+        <item>חדרה</item>
+        <item>הרצליה</item>
+        <item>ראשון לציון</item>
+        <item>מודיעין מכבים רעות</item>
+        <item>כפר סבא</item>
+        <item>רחובות</item>
+        <item>אשקלון</item>
+        <item>נצרת</item>
+        <item>רעננה</item>
+        <item>צפת</item>
+        <item>תל מונד</item>
+        <item>מגדל העמק</item>
+        <item>קריית שמונה</item>
+        <item>אילת</item>
+        <item>כרמיאל</item>
+        <item>גבעתיים</item>
+        <item>חולון</item>
+        <item>רמת גן</item>
+        <item>בני ברק</item>
+        <item>נס ציונה</item>
+        <item>קצרין</item>
+        <item>ירכא</item>
+        <item>שדרות</item>
+
+
+    </string-array>
+
+</resources>

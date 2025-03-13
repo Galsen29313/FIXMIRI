@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="8dp">
+
+    <!-- Left Section -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvEventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Event Name" />
+
+        <TextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Date" />
+
+        <TextView
+            android:id="@+id/tvEventTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Time" />
+
+    </LinearLayout>
+
+    <!-- Right Section -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvEventCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category Sport" />
+
+        <TextView
+            android:id="@+id/tvEventCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City" />
+
+        <TextView
+            android:id="@+id/tvEventJoinedNe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Joined People" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/JoinBT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="הצטרף"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>
