@@ -76,6 +76,7 @@ public class UserEvents extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rcUserEvents);
 
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         eventList = new ArrayList<>();
         eventAdapter = new EventAdapter(eventList,UserEvents.this);
@@ -83,8 +84,6 @@ public class UserEvents extends AppCompatActivity {
 
 
 
-        // Get the entered date from the EditText
-        // Setup Spinners (Dropdowns)
 
 
         databaseService.getUserEvents(uid,  new DatabaseService.DatabaseCallback<List<Event>>() {

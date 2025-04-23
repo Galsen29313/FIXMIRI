@@ -17,7 +17,7 @@ import com.gal.project.R;
 public class After extends AppCompatActivity implements View.OnClickListener {
 
 
-    ImageButton ibprofile,ibaddEvent,ibsearchEvent,ibinformation;
+    ImageButton ibprofile,ibaddEvent,ibsearchEvent,ibinformation,ibReEvents;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,8 @@ public class After extends AppCompatActivity implements View.OnClickListener {
         ibinformation.setOnClickListener(this);
         ibprofile=findViewById(R.id.ibAccount);
         ibprofile.setOnClickListener(this);
+        ibReEvents=findViewById(R.id.ibreEvents);
+                ibReEvents.setOnClickListener(this);
     }
 
     @Override
@@ -56,6 +58,11 @@ public class After extends AppCompatActivity implements View.OnClickListener {
 
 
             Intent go = new Intent(getApplicationContext(), Profile.class);
+            startActivity(go);
+        }
+        if (v==ibReEvents)
+        {
+            Intent go=new Intent(getApplicationContext(), UserEvents.class);
             startActivity(go);
         }
     }

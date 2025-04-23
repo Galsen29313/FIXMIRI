@@ -45,32 +45,51 @@
 
     <ImageButton
         android:id="@+id/ibsearchE"
-        android:layout_width="141dp"
-        android:layout_height="134dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="54dp"
         android:layout_weight="1"
         android:background="@drawable/search"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibAccount"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ibAccount" />
 
     <ImageButton
         android:id="@+id/ibAccount"
         android:layout_width="0dp"
-        android:layout_height="134dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="37dp"
         android:layout_weight="1"
         android:background="@drawable/user"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+    <ImageButton
+        android:id="@+id/ibreEvents"
+        android:layout_width="141dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/calendar"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView8"
@@ -88,13 +107,11 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
         android:layout_marginTop="174dp"
-        android:layout_marginEnd="43dp"
         android:text="אודות"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="@+id/ibinfo"
         app:layout_constraintStart_toStartOf="@+id/ibinfo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,10 +121,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="65dp"
+        android:layout_marginBottom="337dp"
         android:text="חיפוש אירוע"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/ibsearchE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ibAccount"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -116,12 +134,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:layout_marginEnd="11dp"
+        android:layout_marginEnd="51dp"
         android:text="פרטי משתמש"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/ibAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibsearchE"
         app:layout_constraintTop_toBottomOf="@+id/ibinfo" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="164dp"
+        android:text="האירועים שלי"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ibreEvents" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

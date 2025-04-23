@@ -9,55 +9,58 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
+        android:layout_width="130dp"
+        android:layout_height="58dp"
 
 
-        android:layout_marginEnd="207dp"
         android:background="@color/black"
         android:text="הרשם"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnLogin"
-        app:layout_constraintEnd_toStartOf="@+id/btnAbout"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="220dp"
-        android:layout_height="54dp"
+        android:layout_width="153dp"
+        android:layout_height="58dp"
         android:background="@color/black"
         android:text="התחבר"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnAbout"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
+        android:layout_width="130dp"
+        android:layout_height="58dp"
         android:background="@color/black"
         android:text="אודות"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRegister" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginBottom="328dp"
         android:text="ברוכים הבאים"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

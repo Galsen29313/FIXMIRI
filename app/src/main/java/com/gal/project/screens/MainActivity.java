@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(golog);
         }
         if(v==btnAbout){
-            Intent goAbo=new Intent(getApplicationContext(), UserEvents.class);
+            Intent goAbo=new Intent(getApplicationContext(), Info.class);
             startActivity(goAbo);
         }
     }
