@@ -82,7 +82,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="33dp"
-        android:background="@drawable/calendar"
+        android:background="@drawable/clanderview"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"

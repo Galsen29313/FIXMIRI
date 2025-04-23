@@ -153,7 +153,7 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
                         public void onCompleted(Void result) {
                             Toast.makeText(AddNewEvent.this, "האירוע נוצר בהצלחה!", Toast.LENGTH_LONG).show();
                             // חזור למסך הראשי או למקום אחר
-                            finish(); // או להתחיל Activity חדש אם צריך
+                            // או להתחיל Activity חדש אם צריך
                         }
 
                         @Override

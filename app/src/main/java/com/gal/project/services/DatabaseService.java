@@ -217,6 +217,18 @@ public class DatabaseService {
     }
 
 
+
+
+
+    public void setEventForOneUser(@NotNull final Event Event, String uid,  @Nullable final DatabaseCallback<Void> callback) {
+
+
+            writeData("UserEvent/" + uid+"/"+ Event.getId(), Event, callback);
+
+    }
+
+
+
     public void deleteEventForUser(@NotNull final Event event, String  uid, @Nullable final DatabaseCallback<Void> callback)
 
     {

@@ -11,6 +11,7 @@
     import com.gal.project.R;
     import com.gal.project.models.Event;
     import com.gal.project.screens.SearchEventsActivity;
+    import com.gal.project.screens.UserEvents;
 
     import java.util.List;
 
@@ -26,12 +27,16 @@
         public EventAdapter(List<Event> eventList, Context context) {
             this.eventList = eventList;
             this.context = context;
+
+
         }
 
         @Override
         public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // Inflate the layout for each list item
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.raw_event, parent, false);
+
+
             return new EventViewHolder(view);
         }
 
@@ -46,10 +51,19 @@
             holder.tvEventCat.setText(event.getType());
             holder.tvEventCity.setText(event.getCity());
 
+            if (context instanceof UserEvents) {
 
-             holder.tvEventJoined.setText((event.getJoined().size())+"/"+event.getMaxJoin());
+                holder.btnJoin.setText("יציאה");
+            }
 
-            
+
+
+
+
+
+            holder.tvEventJoined.setText((event.getJoined().size())+"/"+event.getMaxJoin());
+
+
 
           holder.btnJoin.setOnClickListener(v -> {
                 ((SearchEventsActivity) context).joinEvent(event); //
@@ -81,6 +95,7 @@
                 tvEventCity = itemView.findViewById(R.id.tvEventCity);
                 tvEventJoined = itemView.findViewById(R.id.tvEventJoinedNe);
                 btnJoin=itemView.findViewById(R.id.JoinBT);
+
 
             }
         }

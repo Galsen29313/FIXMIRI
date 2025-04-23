@@ -75,6 +75,15 @@ public class SearchEventsActivity extends AppCompatActivity {
 
                 eventList.addAll(events);
 
+
+
+
+
+//
+
+
+
+
                 eventAdapter = new EventAdapter(eventList,SearchEventsActivity.this);
                 recyclerView.setAdapter(eventAdapter);
 
@@ -182,9 +191,13 @@ public class SearchEventsActivity extends AppCompatActivity {
                 progressBar.setVisibility(ProgressBar.GONE);
 
 
+
+
                 List<Event> filteredEvents = new ArrayList<>();
                 for (Event event : events) {
-                //     Apply your filters here
+
+                    //     Apply your filters here
+
                    if(event.getType().equals(selectedSportType)&& event.getCity().equals(selectedCity))
                         filteredEvents.add(event);
                     }
@@ -238,6 +251,20 @@ public class SearchEventsActivity extends AppCompatActivity {
                             eventAdapter.notifyDataSetChanged();
                             Toast.makeText(SearchEventsActivity.this, "הצטרפת בהצלחה", Toast.LENGTH_LONG).show();
 
+
+                        }
+
+                        @Override
+                        public void onFailed(Exception e) {
+
+                        }
+                    });
+
+
+
+                    databaseService.setEventForOneUser(event, uid, new DatabaseService.DatabaseCallback<Void>() {
+                        @Override
+                        public void onCompleted(Void object) {
 
                         }
 
