@@ -1,6 +1,8 @@
 package com.gal.project.models;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
    protected String id;
     protected String fname, lname, phone,email, password;
 

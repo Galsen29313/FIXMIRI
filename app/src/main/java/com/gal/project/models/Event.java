@@ -4,10 +4,11 @@ import android.widget.Toast;
 
 import com.gal.project.models.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Event {
+public class Event  implements Serializable  {
 
 
     protected String id;
@@ -186,6 +187,23 @@ public class Event {
         return 0;
 
     }
+
+    public void delParticipant(String id) {
+        int save=-1;
+        for (int i = 0; i < this.joined.size(); i++) {
+
+            if (this.joined.get(i).getId().equals(id)) {
+
+                save=i;
+
+            }
+        }
+        this.joined.remove(save);
+
+
+
+    }
+
 
 
 

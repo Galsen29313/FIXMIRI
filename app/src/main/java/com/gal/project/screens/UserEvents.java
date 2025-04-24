@@ -1,5 +1,6 @@
 package com.gal.project.screens;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +44,7 @@ public class UserEvents extends AppCompatActivity {
     private Button btnSearch;
     private String selectedSportType="", selectedCity="", enteredDate;
     private User user;
+    private String uid;
 
 
     @Override
@@ -59,7 +61,7 @@ public class UserEvents extends AppCompatActivity {
 
         databaseService=DatabaseService.getInstance();
 
-        String uid= AuthenticationService.getInstance().getCurrentUserId();
+         uid= AuthenticationService.getInstance().getCurrentUserId();
 
 
         databaseService.getUser(uid, new DatabaseService.DatabaseCallback<com.gal.project.models.User>() {
@@ -186,4 +188,82 @@ public class UserEvents extends AppCompatActivity {
         });
     }
 
-}
+
+   public void  eventExit(Event event){
+
+
+
+
+       event.delParticipant(uid);
+
+
+
+
+
+                   databaseService.updateEvent(event, new DatabaseService.DatabaseCallback<Void>() {
+                       @Override
+                       public void onCompleted(Void object) {
+
+
+
+
+                           eventAdapter.notifyDataSetChanged();
+
+
+                       }
+
+                       @Override
+                       public void onFailed(Exception e) {
+
+                       }
+                   });
+
+       databaseService.delEventForOneUser(event.getId(),uid, new DatabaseService.DatabaseCallback<Void>() {
+           @Override
+           public void onCompleted(Void object) {
+
+           }
+
+           @Override
+           public void onFailed(Exception e) {
+
+           }
+
+
+
+       });
+
+
+       databaseService.UpdateEventForUsers(event, new DatabaseService.DatabaseCallback<Void>() {
+           @Override
+           public void onCompleted(Void object) {
+
+           }
+
+           @Override
+           public void onFailed(Exception e) {
+
+           }
+       });
+
+
+
+
+
+               }
+
+               public  void goToEditEvent(Event event){
+
+
+
+                   Intent goEdit=new Intent(getApplicationContext(), EditEvent.class);
+
+                   goEdit.putExtra("event", event);
+                   startActivity(goEdit);
+
+               }
+
+
+
+    }
+

@@ -175,7 +175,14 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
                     });
                 }
 
-
+                // לאחר יצירת האירוע, נוכל להעביר למסך עריכת אירוע עם הפרטים
+                Intent intent = new Intent(AddNewEvent.this, EditEvent.class);
+                intent.putExtra("eventName", name);
+                intent.putExtra("eventDate", date);
+                intent.putExtra("eventTime", time);
+                intent.putExtra("eventAddress", address);
+                intent.putExtra("maxMembers", Integer.parseInt(members));
+                startActivity(intent);
 
 
 

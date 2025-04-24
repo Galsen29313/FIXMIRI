@@ -12,6 +12,7 @@
     import com.gal.project.models.Event;
     import com.gal.project.screens.SearchEventsActivity;
     import com.gal.project.screens.UserEvents;
+    import com.gal.project.services.AuthenticationService;
 
     import java.util.List;
 
@@ -44,6 +45,8 @@
         public void onBindViewHolder(EventViewHolder holder, int position) {
             Event event = eventList.get(position);
 
+            String uid= AuthenticationService.getInstance().getCurrentUserId();
+
             // Bind the data to the views
             holder.tvEventName.setText(event.getName());
             holder.tvEventDate.setText(event.getDate());
@@ -51,9 +54,16 @@
             holder.tvEventCat.setText(event.getType());
             holder.tvEventCity.setText(event.getCity());
 
+
+
+
             if (context instanceof UserEvents) {
 
-                holder.btnJoin.setText("יציאה");
+                if(event.getUserAdmin().getId().equals(uid))
+
+                    holder.btnJoin.setText("עריכה");
+
+                 else    holder.btnJoin.setText("יציאה");
             }
 
 
@@ -66,7 +76,13 @@
 
 
           holder.btnJoin.setOnClickListener(v -> {
-                ((SearchEventsActivity) context).joinEvent(event); //
+
+              if( holder.btnJoin.getText().equals("יציאה"))
+                  ( (UserEvents) context).eventExit (event);
+                  else  if( holder.btnJoin.getText().equals("עריכה"))
+                        ( (UserEvents) context).goToEditEvent (event);
+
+                  else         ((SearchEventsActivity) context).joinEvent(event); //
             });
 
         }

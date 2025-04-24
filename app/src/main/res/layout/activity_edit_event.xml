@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.EditEvent">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="monospace"
+        android:text="עריכת אירוע"
+        android:textSize="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/etEventNameEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etEventNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="34dp"
+        android:ems="10"
+        android:hint="שם האירוע"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etDescEdit"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/etEventDateEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="תאריך"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/spEventCityEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etEventMaxMembersEdit"
+        app:layout_constraintTop_toBottomOf="@+id/etEventTimeEdit" />
+
+    <EditText
+        android:id="@+id/etEventTimeEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="שעה"
+        android:inputType="time"
+        app:layout_constraintBottom_toTopOf="@+id/etEventDateEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etEventAddressEdit"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <Spinner
+        android:id="@+id/spEventTypeEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="24dp"
+        android:entries="@array/arrTYpe"
+        app:layout_constraintBottom_toTopOf="@+id/etEventAddressEdit"
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescEdit" />
+
+    <Spinner
+        android:id="@+id/spEventCityEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="64dp"
+        android:entries="@array/arrCity"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveEvent"
+        app:layout_constraintEnd_toStartOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEventDateEdit" />
+
+    <EditText
+        android:id="@+id/etEventAddressEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="כתובת"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/etEventMaxMembersEdit"
+        app:layout_constraintEnd_toStartOf="@+id/etEventTimeEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spEventTypeEdit" />
+
+    <EditText
+        android:id="@+id/etEventMaxMembersEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="238dp"
+        android:ems="10"
+        android:hint="מספר משתתפים"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etEventDateEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEventAddressEdit" />
+
+    <EditText
+        android:id="@+id/etDescEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="תיאור"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/spEventTypeEdit"
+        app:layout_constraintEnd_toStartOf="@+id/etEventNameEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
+        android:background="@drawable/rounded_button"
+        android:text="שמור"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spEventCityEdit" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="38dp"
+        android:text="סוג האירוע:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/etEventTimeEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spEventTypeEdit"
+        app:layout_constraintTop_toBottomOf="@+id/etEventNameEdit" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="1dp"
+        android:text="עיר:"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spEventCityEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spEventCityEdit"
+        app:layout_constraintTop_toTopOf="@+id/spEventCityEdit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

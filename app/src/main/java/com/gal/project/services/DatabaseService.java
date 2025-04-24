@@ -218,12 +218,32 @@ public class DatabaseService {
 
 
 
+    public void UpdateEventForUsers(@NotNull final Event Event, @Nullable final DatabaseCallback<Void> callback) {
+        for (int i = 0; i < Event.getJoined().size(); i++) {
+            User user = Event.getJoined().get(i);
+
+            writeData("UserEvent/" + user.getId()+"/"+ Event.getId(), Event, callback);
+        }
+    }
+
+
+
+
 
 
     public void setEventForOneUser(@NotNull final Event Event, String uid,  @Nullable final DatabaseCallback<Void> callback) {
 
 
             writeData("UserEvent/" + uid+"/"+ Event.getId(), Event, callback);
+
+    }
+
+
+
+    public void delEventForOneUser(@NotNull final String eid, String uid,  @Nullable final DatabaseCallback<Void> callback) {
+
+
+        deleteData("UserEvent/" + uid+"/"+ eid,  callback);
 
     }
 

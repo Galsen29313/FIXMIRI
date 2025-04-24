@@ -233,6 +233,8 @@ public class SearchEventsActivity extends AppCompatActivity {
        String uid= AuthenticationService.getInstance().getCurrentUserId();
 
 
+
+
         databaseService.getUser(uid, new DatabaseService.DatabaseCallback<com.gal.project.models.User>() {
             @Override
             public void onCompleted(com.gal.project.models.User u) {
