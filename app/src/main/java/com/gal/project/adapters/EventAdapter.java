@@ -17,17 +17,22 @@
     import java.util.List;
 
     public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
+
         private List<Event> eventList;
 
         private Context context;
 
+
         // Constructor to initialize the list
+
+
 
 
 
         public EventAdapter(List<Event> eventList, Context context) {
             this.eventList = eventList;
             this.context = context;
+
 
 
         }
@@ -45,7 +50,7 @@
         public void onBindViewHolder(EventViewHolder holder, int position) {
             Event event = eventList.get(position);
 
-            String uid= AuthenticationService.getInstance().getCurrentUserId();
+
 
             // Bind the data to the views
             holder.tvEventName.setText(event.getName());
@@ -56,7 +61,7 @@
 
 
 
-
+            String uid= AuthenticationService.getInstance().getCurrentUserId();
             if (context instanceof UserEvents) {
 
                 if(event.getUserAdmin().getId().equals(uid))

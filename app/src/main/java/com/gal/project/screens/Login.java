@@ -130,6 +130,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         /// Redirect to main activity and clear back stack to prevent user from going back to login screen
                         Intent mainIntent = new Intent(Login.this, After.class);
                         /// Clear the back stack (clear history) and start the MainActivity
+
+                        user=new User(user);
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(mainIntent);
 

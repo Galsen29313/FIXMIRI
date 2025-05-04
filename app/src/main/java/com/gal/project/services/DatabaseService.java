@@ -1,12 +1,16 @@
 package com.gal.project.services;
 
+import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 
 import com.gal.project.models.Event;
 import com.gal.project.models.User;
+import com.gal.project.screens.EditEvent;
+import com.gal.project.screens.UserEvents;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -29,17 +33,6 @@ public class DatabaseService {
     /// @see Log
     private static final String TAG = "DatabaseService";
 
-    public void createEvent(Event newEvent, DatabaseCallback<Void> callback) {
-        // במקרה ואין ID לאירוע, ניצור אחד
-        String eventId = newEvent.getId();
-        if (eventId == null || eventId.isEmpty()) {
-            eventId = generateEventId();  // צור מזהה חדש אם לא סופק
-            newEvent.setId(eventId);  // הגדר את המזהה החדש לאירוע
-        }
-
-        // שמור את האירוע ב-Firebase תחת הנתיב "events/{eventId}"
-        writeData("events/" + eventId, newEvent, callback);
-    }
 
 
     /// callback interface for database operations
@@ -176,6 +169,8 @@ public class DatabaseService {
     }
 
 
+
+
     /// get a user from the database
     /// @param uid the id of the user to get
     /// @param callback the callback to call when the operation is completed
@@ -205,36 +200,34 @@ public class DatabaseService {
 
     public void updateEvent(@NotNull final com.gal.project.models.Event event, @Nullable final DatabaseCallback<Void> callback) {
         writeData("events/" + event.getId(), event, callback);
+        // update users
+        for (int i = 0; i < event.getJoined().size(); i++) {
+            User user = event.getJoined().get(i);
+
+            writeData("UserEvent/" + user.getId()+"/"+ event.getId(), event, callback);
+        }
     }
 
 
-    public void setEventForUsers(@NotNull final Event Event, @Nullable final DatabaseCallback<Void> callback) {
-        for (int i = 0; i < Event.getJoined().size(); i++) {
-            User user = Event.getJoined().get(i);
+    public void setEventForUsers(@NotNull final Event event, @Nullable final DatabaseCallback<Void> callback) {
+        for (int i = 0; i <event.getJoined().size(); i++) {
+            User user = event.getJoined().get(i);
 
-            writeData("UserEvent/" + user.getId()+"/"+ Event.getId(), Event, callback);
+            writeData("UserEvent/" + user.getId()+"/"+ event.getId(), event, callback);
         }
     }
 
 
 
-    public void UpdateEventForUsers(@NotNull final Event Event, @Nullable final DatabaseCallback<Void> callback) {
-        for (int i = 0; i < Event.getJoined().size(); i++) {
-            User user = Event.getJoined().get(i);
-
-            writeData("UserEvent/" + user.getId()+"/"+ Event.getId(), Event, callback);
-        }
-    }
 
 
 
 
 
+    public void setEventForOneUser(@NotNull final Event event, String uid,  @Nullable final DatabaseCallback<Void> callback) {
 
-    public void setEventForOneUser(@NotNull final Event Event, String uid,  @Nullable final DatabaseCallback<Void> callback) {
 
-
-            writeData("UserEvent/" + uid+"/"+ Event.getId(), Event, callback);
+            writeData("UserEvent/" + uid+"/"+ event.getId(), event, callback);
 
     }
 
@@ -259,7 +252,7 @@ public class DatabaseService {
                 event.getJoined().remove(i);
 
         }
-        writeData("Events/" + event.getId(), event, callback);
+        writeData("events/" + event.getId(), event, callback);
 
         deleteData("UserEvent/" + uid + "/" + event.getId(), callback);
     }
@@ -274,14 +267,14 @@ public class DatabaseService {
                 callback.onFailed(task.getException());
                 return;
             }
-            List<Event> Events = new ArrayList<>();
+            List<Event> events = new ArrayList<>();
             task.getResult().getChildren().forEach(dataSnapshot -> {
-                Event Event = dataSnapshot.getValue(Event.class);
-                Log.d(TAG, "Got Event: " + Event);
-                Events.add(Event);
+                Event event = dataSnapshot.getValue(Event.class);
+                Log.d(TAG, "Got Event: " + event);
+                events.add(event);
             });
 
-            callback.onCompleted(Events);
+            callback.onCompleted(events);
         });
 
 
@@ -291,18 +284,6 @@ public class DatabaseService {
 
 
 
-
-    /// get a event from the database
-    /// @param eventId the id of the event to get
-    /// @param callback the callback to call when the operation is completed
-    ///               the callback will receive the event object
-    ///              if the operation fails, the callback will receive an exception
-    /// @return void
-    /// @see DatabaseCallback
-    /// @see Event
-    public void getEvent(@NotNull final String eventId, @NotNull final DatabaseCallback<com.gal.project.models.Event> callback) {
-        getData("events/" + eventId, com.gal.project.models.Event.class, callback);
-    }
 
 
     /// generate a new id for a new event in the database
@@ -381,6 +362,7 @@ public class DatabaseService {
             List<com.gal.project.models.User> users = new ArrayList<>();
             task.getResult().getChildren().forEach(dataSnapshot -> {
                 com.gal.project.models.User user = dataSnapshot.getValue(com.gal.project.models.User.class);
+                user=new User (user);
                 Log.d(TAG, "Got user: " + user);
                 users.add(user);
             });

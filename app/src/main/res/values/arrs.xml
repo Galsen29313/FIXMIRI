@@ -2,8 +2,9 @@
 <resources>
 
     <string-array name="arrTYpe">
+
         <item >סוג ספורט</item>
-        <item>כדורגל</item>
+        <item >כדורגל</item>
         <item>כדורסל</item>
         <item>טניס</item>
         <item>שחייה</item>

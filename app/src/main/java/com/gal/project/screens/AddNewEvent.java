@@ -131,7 +131,7 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
 
                     // יצירת אירוע חדש
                     Event newEvent = new Event(
-                            id, // כאן אתה יכול לשים מזהה ייחודי
+                            id, // מזהה ייחודי
                             user, // המשתמש המנהל
                             name, // שם האירוע
                             spType.getSelectedItem().toString(), // סוג האירוע
@@ -148,7 +148,7 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
                     );
 
                     // שמירה במסד הנתונים
-                    databaseService.createEvent(newEvent, new DatabaseService.DatabaseCallback<Void>() {
+                    databaseService.createNewEvent  (newEvent, new DatabaseService.DatabaseCallback<Void>() {
                         @Override
                         public void onCompleted(Void result) {
                             Toast.makeText(AddNewEvent.this, "האירוע נוצר בהצלחה!", Toast.LENGTH_LONG).show();

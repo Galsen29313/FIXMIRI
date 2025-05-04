@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gal.project.R;
 import com.gal.project.adapters.EventAdapter;
+import com.gal.project.adapters.EventUserAdapter;
 import com.gal.project.models.Event;
 import com.gal.project.models.User;
 import com.gal.project.services.AuthenticationService;
@@ -33,7 +34,7 @@ import java.util.List;
 public class UserEvents extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private EventAdapter eventAdapter;
+    private EventUserAdapter eventAdapter;
     private List<Event> eventList;
     private DatabaseService databaseService;
     private ProgressBar progressBar;
@@ -81,7 +82,7 @@ public class UserEvents extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         eventList = new ArrayList<>();
-        eventAdapter = new EventAdapter(eventList,UserEvents.this);
+        eventAdapter = new EventUserAdapter(eventList,UserEvents.this,uid);
         recyclerView.setAdapter(eventAdapter);
 
 
@@ -234,17 +235,6 @@ public class UserEvents extends AppCompatActivity {
        });
 
 
-       databaseService.UpdateEventForUsers(event, new DatabaseService.DatabaseCallback<Void>() {
-           @Override
-           public void onCompleted(Void object) {
-
-           }
-
-           @Override
-           public void onFailed(Exception e) {
-
-           }
-       });
 
 
 
