@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     EditText etEmail, etPassword;
     Button btnLog;
-
+    ImageButton backButton;
 
     private static final String TAG = "LoginActivity";
 
@@ -50,7 +51,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         etEmail= findViewById(R.id.etEmail);
         etPassword= findViewById(R.id.etPassword);
         btnLog = findViewById(R.id.btnLog);
-
+        backButton=findViewById(R.id.reButton);
         if(user!=null) {
             etEmail.setText(user.getEmail());
             etPassword.setText(user.getPassword());
@@ -164,9 +165,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             }
         });
+
     }
 
-
+    public void back(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }
 

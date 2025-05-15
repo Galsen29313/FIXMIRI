@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserEvents extends AppCompatActivity {
-
+       ImageButton backButton;
     private RecyclerView recyclerView;
     private EventUserAdapter eventAdapter;
     private List<Event> eventList;
@@ -59,7 +60,7 @@ public class UserEvents extends AppCompatActivity {
             return insets;
         });
 
-
+        backButton=findViewById(R.id.reButton);
         databaseService=DatabaseService.getInstance();
 
          uid= AuthenticationService.getInstance().getCurrentUserId();
@@ -222,6 +223,10 @@ public class UserEvents extends AppCompatActivity {
        databaseService.delEventForOneUser(event.getId(),uid, new DatabaseService.DatabaseCallback<Void>() {
            @Override
            public void onCompleted(Void object) {
+               Intent goEdit=new Intent(getApplicationContext(), After.class);
+
+
+               startActivity(goEdit);
 
            }
 
@@ -253,7 +258,10 @@ public class UserEvents extends AppCompatActivity {
 
                }
 
-
+    public void back(View view) {
+        Intent intent=new Intent(this,After.class);
+        startActivity(intent);
+    }
 
     }
 

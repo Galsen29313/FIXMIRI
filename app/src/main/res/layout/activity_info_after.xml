@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.Info">
+    tools:context=".screens.InfoAfter">
 
     <TextView
         android:id="@+id/textView2"
@@ -97,5 +97,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

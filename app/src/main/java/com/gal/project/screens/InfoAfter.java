@@ -13,24 +13,24 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.gal.project.R;
 
-public class Info extends AppCompatActivity {
-ImageButton backButton;
+public class InfoAfter extends AppCompatActivity {
+    ImageButton backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_info_after);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
         });
         backButton=findViewById(R.id.reButton);
-    }
 
+    }
     public void back(View view) {
-        Intent intent=new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, After.class);
         startActivity(intent);
     }
 }

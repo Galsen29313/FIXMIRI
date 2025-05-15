@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Project1"
         tools:targetApi="31">
         <activity
+            android:name=".screens.InfoAfter"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Splash"
+            android:exported="false" />
+        <activity
             android:name=".screens.EditEvent"
             android:exported="false" />
         <activity

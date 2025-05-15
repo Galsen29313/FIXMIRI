@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -42,7 +43,7 @@ public class SearchEventsActivity extends AppCompatActivity {
     private Button btnSearch;
     private String selectedSportType="", selectedCity="", enteredDate;
     private User user;
-
+    ImageButton backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,7 +126,7 @@ public class SearchEventsActivity extends AppCompatActivity {
             }
         });
 
-
+        backbutton=findViewById(R.id.reButton);
 
     }
 
@@ -300,5 +301,8 @@ public class SearchEventsActivity extends AppCompatActivity {
 
     });
 }
-
+    public void back(View view) {
+        Intent intent=new Intent(this,After.class);
+        startActivity(intent);
+    }
 }

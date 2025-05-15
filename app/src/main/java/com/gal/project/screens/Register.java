@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +22,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     EditText etFname, etLname, etPhone, etEmail, etPassword;
     String  Fname, Lname, Phone, Email, Password;
     Button btnReg;
+    ImageButton backButton;
     Boolean isVaild = true;
 
 
@@ -64,7 +66,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         etPassword = findViewById(R.id.etPassword);
         btnReg = findViewById(R.id.btnReg);
         btnReg.setOnClickListener(this);
-
+        backButton=findViewById(R.id.reButton);
     }
 
     @Override
@@ -178,7 +180,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
 
         }
-
+    public void back(View view) {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
     }
 
 

@@ -1,6 +1,9 @@
 package com.gal.project.screens;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +16,7 @@ public class Profile extends AppCompatActivity {
 
     TextView tvFname, tvLname, tvPhone, tvEmail;
     User user;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class Profile extends AppCompatActivity {
         tvLname = findViewById(R.id.tvLname);
         tvPhone = findViewById(R.id.tvPhone);
         tvEmail = findViewById(R.id.tvEmail);
+        backButton=findViewById(R.id.reButton);
 
         // הצגת הפרטים במסכים המתאימים
         if (user != null) {
@@ -36,5 +41,9 @@ public class Profile extends AppCompatActivity {
             tvPhone.setText("טלפון: " + user.getPhone());
             tvEmail.setText("אימייל: " + user.getEmail());
         }
+    }
+    public void back(View view) {
+        Intent intent=new Intent(this,After.class);
+        startActivity(intent);
     }
 }

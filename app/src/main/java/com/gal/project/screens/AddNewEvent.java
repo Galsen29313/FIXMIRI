@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
     Spinner spType,spCity;
     Button createEvent;
     Boolean isVaild = true;
-
+    ImageButton backButton;
     private AuthenticationService authenticationService;
     private DatabaseService databaseService;
     private com.gal.project.models.User user;
@@ -83,7 +84,7 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
 
         spCity = findViewById(R.id.spEventCity);
         spCity.setAdapter(spCity.getAdapter());
-
+        backButton=findViewById(R.id.reButton);
 
     }
     @Override
@@ -192,5 +193,8 @@ public class AddNewEvent extends AppCompatActivity implements View.OnClickListen
             }
         }
     }
-
+    public void back(View view) {
+        Intent intent=new Intent(this,After.class);
+        startActivity(intent);
+    }
 }
