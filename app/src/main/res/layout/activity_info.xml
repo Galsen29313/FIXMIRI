@@ -5,97 +5,195 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6D98BA"
     tools:context=".screens.Info">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="110dp"
-        android:text="אודות "
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#564946"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView3"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:text="אודות"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/reButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start"
+            
+            android:contentDescription="חזרה"
+            android:onClick="back"
+            android:src="@drawable/backbutton"
+          />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginBottom="75dp"
-        android:text="האם אתם חובבי ספורט שמחפשים שותפים למשחק? האם קרה לכם שתרצו לשחק כדורגל, כדורסל או כל ספורט אחר, אך לא היה לכם עם מי? האפליקציה שלנו נועדה בדיוק בשבילכם!"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="172dp"
-        android:text="העולם שלנו מלא באנשים שאוהבים ספורט, אך פעמים רבות קשה למצוא את השותפים המושלמים למשחק. האפליקציה שלנו מציעה פתרון מושלם לכל מי שמחפש שותפים למשחקי ספורט, בלי קשר לאן, מתי או איזה ספורט – אנחנו כאן כדי לעזור לכם למצוא את החברים המתאימים."
-        android:textSize="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="227dp"
-        android:text="מה האפליקציה מציעה?
-
-מציאת שותפים בקלות: חפשו שותפים למשחקי כדורגל, כדורסל, סקווש, טניס ועוד.
-מתאימה לכל גיל: בין אם אתם ילדים, צעירים או מבוגרים, תוכלו למצוא שותפים שמתאימים לכם.
-אירועים מותאמים אישית: בנו אירועים, פרסמו אותם ואירגנו משחקים בצורה פשוטה ונוחה.
-כל תחום ספורט: בין אם אתם מעדיפים ספורט קבוצתי או אישי, האפליקציה מאפשרת לכם למצוא שותפים במגוון תחומים."
-        android:textSize="17dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="16dp"
-        android:text="כיצד זה עובד?
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-הירשמו לאפליקציה – היכנסו לאפליקציה עם פרופיל אישי.
-בחרו את הספורט המועדף עליכם – כדורגל, כדורסל, טניס או כל ספורט אחר.
-חפשו שותפים – גלו אנשים שמתאימים לכם לפי גיל, מיקום וסוג המשחק.
-התחילו לשחק – ארגנו את המשחק המושלם עם חברים חדשים ומנוסים!
-העתיד של חוויית הספורט מתחיל כאן – אל תחכו, הצטרפו עוד היום לאפליקציה שלנו והתחילו לשחק!"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#95F9E3"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/reButton"
-        android:layout_width="51dp"
-        android:layout_height="49dp"
-        android:background="@drawable/backbutton"
-        android:onClick="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="האם אתם חובבי ספורט שמחפשים שותפים למשחק? האם קרה לכם שתרצו לשחק כדורגל, כדורסל או כל ספורט אחר, אך לא היה לכם עם מי? האפליקציה שלנו נועדה בדיוק בשבילכם!"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#564946"
+                    android:textSize="18sp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#95F9E3"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardIntro">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="העולם שלנו מלא באנשים שאוהבים ספורט, אך פעמים רבות קשה למצוא את השותפים המושלמים למשחק. האפליקציה שלנו מציעה פתרון מושלם לכל מי שמחפש שותפים למשחקי ספורט, בלי קשר לאן, מתי או איזה ספורט – אנחנו כאן כדי לעזור לכם למצוא את החברים המתאימים."
+                    android:textAlignment="viewEnd"
+                    android:textColor="#564946"
+                    android:textSize="18sp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFeatures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#69EBD0"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDescription">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="מה האפליקציה מציעה?"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#564946"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:text="• מציאת שותפים בקלות: חפשו שותפים למשחקי כדורגל, כדורסל, סקווש, טניס ועוד.\n\n• מתאימה לכל גיל: בין אם אתם ילדים, צעירים או מבוגרים, תוכלו למצוא שותפים שמתאימים לכם.\n\n• אירועים מותאמים אישית: בנו אירועים, פרסמו אותם ואירגנו משחקים בצורה פשוטה ונוחה.\n\n• כל תחום ספורט: בין אם אתם מעדיפים ספורט קבוצתי או אישי, האפליקציה מאפשרת לכם למצוא שותפים במגוון תחומים."
+                        android:textAlignment="viewEnd"
+                        android:textColor="#564946"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHowItWorks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#69EBD0"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardFeatures">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="כיצד זה עובד?"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#564946"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:text="1. הירשמו לאפליקציה – היכנסו לאפליקציה עם פרופיל אישי.\n\n2. בחרו את הספורט המועדף עליכם – כדורגל, כדורסל, טניס או כל ספורט אחר.\n\n3. חפשו שותפים – גלו אנשים שמתאימים לכם לפי גיל, מיקום וסוג המשחק.\n\n4. התחילו לשחק – ארגנו את המשחק המושלם עם חברים חדשים ומנוסים!"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#564946"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="העתיד של חוויית הספורט מתחיל כאן – אל תחכו, הצטרפו עוד היום לאפליקציה שלנו והתחילו לשחק!"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#564946"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
